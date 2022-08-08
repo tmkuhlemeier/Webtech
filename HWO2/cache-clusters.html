@@ -1,0 +1,149 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="description" content="What are cache clusters? Webcaches often occur in clusters. They consist 
+		of cache hierachies. Each cache in the cluster can have a sibling or a parent. 
+		At the end of the cache cluster is the origin server.">
+		<meta name="keywords" content="webcaches, web caches, cache-clusters, cache clusters, cacheclusters,HTTP,
+		HTCP, ICP, cachehierarchy, cache cluster, cachecluster, cache-cluster, cache hierarchy">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="css/stylesheet.css">
+		<script src="js/menu.js" defer></script>
+		<title>Cache Clusters</title>
+	</head>
+
+	<body>
+		<header class="info-area">
+			<h1>Introduction to Webcaches</h1>
+			<h2>The website to find information about webcaches</h2>
+		</header>
+		<nav>
+			<ul class="nav__list">
+				<li>
+					<a href="index.html" target="_self"> Introduction to Webcaches</a>
+				</li>
+				<li>
+					<a href="browser-and-proxy-caches.html" target="_self">Browser Cache and Proxy Cache</a>
+				</li>
+				<li>
+					<a href="forward-and-reverse-caching.html" target="_self">Forward and Reverse Caching</a>
+				</li>
+				<li>
+					<a href="cache-control.html" target="_self">Cache Control</a>
+				</li>
+				<li>
+					<a class="nav__link--active" href="cache-clusters.html" target="_self">Cache Clusters</a>
+				</li>
+				<li>
+					<a href="assesment.html" target="_self">Quiz</a>
+				</li>
+			</ul>
+		</nav>
+
+		<main class="info-area">
+			<article>
+				<h2 class="article__heading">Cache Clusters</h2>
+				<section>
+					<h3 class="section__heading">Grouped caches</h3>
+					<p>
+					Most of the time cache proxies dont occur as a singular entity but in groups. These groups
+					are called <strong>cache clusters</strong>. They are grouped cache proxies which are connected 
+					with eachother to collaborate in order to handle a HTTP request. The caches inside the cluster
+					query eachother for items the client requested. For example an item could be found at a 
+					sibling cache, or the request can be forwarded to a parent cache, 
+					or if there are no more parent caches to the origin server.
+					</p>
+				</section>
+				<section>
+					<h3 class="section__heading">Cache Hierarchies</h3>
+					<p>
+					These clusters contain <strong>hierarchies</strong>. Consisting of parents and siblings.
+					<strong>Sibling caches</strong> are on the same level. They can only tell eachother if they have a certain item or not.
+					They cannot forward a request to eachother. <strong>Parent caches</strong>, to the contrary, can takeover a request of a child.
+					That means if a child cannot find the item, it will forward the request to its parent. The parent will
+					then handle the request from there. If the last parent cannot realize a hit then it will forward the
+					request to the origin server.
+					<sup>
+						<a href="http://ommolketab.ir/aaf-lib/s0olcdtboycnxqwgn0lays4etret8g.pdf" 
+						target="_blank">[1]</a>
+					</sup>
+					</p>
+					<figure>
+						<img id="cachehierarchyimg" class="figure__image" src="images/cachehierarchy.png" alt="A hierarchy of caches. Where the caches on top
+						of eachother are in a parent-child relation and the caches next to eachother are in a sibling relation.
+						On top of the hierarchy is the origin server.">
+						<figcaption class="caption">Fig. 1. A cachecluster with hierarchy</figcaption>
+					</figure>
+				
+				</section>
+				<section>
+					<h3 class="section__heading">Intercache Protocols</h3>
+					<p>
+					As discussed in the <a href="index.html">introduction</a>, client and server use HTTP to communicate with eachother.
+					Caches can use alternative protocols to communicate with eachother. Two of these protocols
+					will be discussed here.
+					</p>
+				</section>
+				<section>
+					<h3 class="section__heading">ICP</h3>
+					<p>
+					One of the subtitutes for HTTP can be ICP. ICP stands for <strong>Internet Cache Protocol</strong>. This
+					protocol can be used between sibling caches.
+					This protocol relies on unreliable but fast datapackages. These packages are sent between
+					siblings to establish wether they hold the item the client requested. In this case unreliable
+					means that packages can be lost. This however reduces the time in which a cache-hit will be realized.
+					Since usually it means theres congestion at the chosen sibling cache if a package gets lost.
+					The cache will chose a different sibling cache to query if it takes too long. This all will result
+					in a faster response to the client.
+					<sup>
+						<a href="https://www.hjp.at/doc/rfc/rfc2187.html" target="_blank">[2]</a>
+					</sup>
+					</p>
+				</section>
+				<section>
+					<h3 class="section__heading">HTCP</h3>
+					<p>
+					HTCP stands for <strong>HyperText Caching Protocol</strong> HTCP is mostly the same as ICP and also uses unreliable packages.
+					The biggest difference is that HTCP uses HTTP headers. ICP does not, which makes it harder
+					to predict <strong>cache-hits</strong> for ICP. This is because for example, HTTP has cache-control headers, and ICP does not. 
+					Since HTCP does contain these headers, it is better in predicting which caches should be
+					asked for information.
+					<sup>
+						<a  
+						href="https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.29.4810&rep=rep1&type=pdf" target="_blank">
+						[3]</a>
+					</sup>
+					</p>
+				</section>
+			</article>
+		</main>
+		<footer class="info-area">
+			<article>
+				<h2 class="article__heading">References</h2>
+				
+				<p>
+					1.
+					<a class="footer__link" href="http://ommolketab.ir/aaf-lib/s0olcdtboycnxqwgn0lays4etret8g.pdf" target="_blank">
+					Wessels, D. (2001). Web caching. " O'Reilly Media, Inc.".</a>
+				</p>
+				<p>
+					2.
+					<a class="footer__link" href="https://www.hjp.at/doc/rfc/rfc2187.html" target="_blank">
+					Wessels, D., & Claffy, K. (1997). RFC2186: Internet Cache Protocol (ICP), version 2.</a>
+				</p>
+				<p>	
+					3.
+					<a class="footer__link" 
+					href="https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.29.4810&rep=rep1&type=pdf" target="_blank">
+					Rousskov, A., & Wessels, D. (1998). Cache digests. Computer Networks and ISDN
+					Systems, 30(22-23), 2155-2168.</a>
+				</p>
+				
+			</article>
+		</footer>
+	</body>
+</html>
+
+			
+			

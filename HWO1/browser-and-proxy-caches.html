@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="description" content="What are browser caches? What are proxy caches? Browser and
+        proxy caches are both used to speed up the loading of websites. By saving a website's resources 
+		in caches, the loading process of websites can be increased drastically.">
+		<meta name="keywords" content="webcaches, web caches, browser caches, proxy caches, proxy server,
+		client, host, gateway caches, HTML, client-side, CDN-side, freshness">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="stylesheet.css">
+		<title>Browser and Proxy Caches</title>
+	</head>
+
+	<body>
+		<header class="info-area">
+			<h1>Introduction to Webcaches</h1>
+			<h2>The website to find information about webcaches</h2>
+		</header>
+		<nav>
+			<ul class="nav__list">
+				<li>
+					<a href ="web-cache-introduction.html" target="_self"> Introduction to Webcaches</a>
+				</li>
+				<li>
+					<a class="nav__link--active" href = "browser-and-proxy-caches.html" target="_self">Browser Cache and Proxy Cache</a>
+				</li>
+				<li>
+					<a href = "forward-and-reverse-caching.html" target="_self">Forward and Reverse Caching</a>
+				</li>
+				<li>
+				<a href = "cache-control.html" target="_self">Cache Control</a>
+				</li>
+				<li>
+				<a href = "cache-clusters.html" target="_self">Cache Clusters</a>
+				</li>
+			</ul>
+		</nav>
+
+		<main class="info-area">
+			<article>
+				<section>
+					<h1 class="section__heading">Browser Cache</h1>
+					<p>
+                    A <strong>cache</strong> can be located on different places. The first place a web cache can be located is within the physical
+                    architecture of the client host. If a page is requested by the client and the client receives a response, it is 
+                    possible that this page and its contents can be saved in the host. In a computer this could be a data storage device
+                    like a HDD/SDD, or even the RAM and DRAM. When a user presses the back button in a browser, the page and 
+                    its contents get retrieved from the data storage device. The <strong>browser cache</strong> makes sure that the client does not 
+                    always have to send a request to a server, which is great because all sorts of delays can occur during this process. 
+                    The host then only needs to retrieve the item from its own memory. 
+                    <sup>
+                        <a href="https://www.imperva.com/learn/performance/browser-caching/" 
+                        target="_blank">[1]</a>
+                    </sup>
+					</p>
+				</section>
+				<section>
+					<h1 class="section__heading">Proxy Cache</h1>
+					<p>
+                    Besides <strong>browser caches</strong>, <strong>proxy caches</strong> exist as well. These caches are present in proxyservers. 
+                    The proxy cache is located between web visitors and the webserver, where it <strong>caches</strong> webfiles so that these can be used by 
+                    multiple visitors. This cache can be present in the network of the institute in which the client is located, at the ISP or it can be located
+                    on the edge of the webserver network. This means that the <strong>proxy cache</strong> can be either client-side or CDN-side
+                    (Content Delivery Network). In the latter case the cache would be called a <strong>gateway cache</strong>. The "freshness" of web items within 
+                    the proxy is decided by the 
+						<a href="cache-control.html">caching policy</a> 
+					of the origin server and it depends upon periodic communication between the proxy- and webserver. 
+                    If a HTML-document is requested by a client for the first time, it gets retrieved from the webserver. The next time this request is made by 
+                    another visitor, it gets retrieved from the <strong>proxy cache</strong>.
+					<sup>
+						<a href="https://www.imperva.com/learn/performance/browser-caching/" 
+						target="_blank">[2]</a>
+					</sup>
+					</p>
+					<figure>
+						<img class="figure__image" src="browsercache.jpg" alt="This image shows where the browser- and
+                        proxy caches are located, but also how the visitor(s), proxy server and origin server communicate
+                        with each other.">
+						<figcaption class="caption">Fig. 1. Browser caching and proxy caching</figcaption>
+					</figure>	
+				</section>
+			</article>
+		</main>
+		
+        <footer class="info-area">
+			<article>		
+				<section>
+					<h1 class="section__heading">References</h1>
+					<p>
+						1.
+						<a class="footer__link" href="https://www.imperva.com/learn/performance/browser-caching/" target="_blank">
+						Imperva. (n.d.). Browser Cache.</a>
+					</p>
+				</section>
+			</article>
+		</footer>
+	</body>
+</html>
+
+			
+			

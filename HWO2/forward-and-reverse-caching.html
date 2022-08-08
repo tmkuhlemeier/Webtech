@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="description" content="What are browser caches? What are proxy caches? Browser and
+        proxy caches are both used to speed up the loading of websites. By saving a website's resources 
+		in caches, the loading process of websites can be increased drastically.">
+		<meta name="keywords" content="webcaches, web caches, browser caches, proxy caches, proxy server,
+		client, host, gateway caches, HTML, client-side, CDN-side, freshness">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="css/stylesheet.css">
+		<script src="js/menu.js" defer></script>
+		<title>Forward and Reverse Caching</title>
+	</head>
+
+	<body>
+		<header class="info-area">
+			<h1>Introduction to Webcaches</h1>
+			<h2>The website to find information about webcaches</h2>
+		</header>
+		<nav>
+			<ul class="nav__list">
+				<li>
+					<a href="index.html" target="_self"> Introduction to Webcaches</a>
+				</li>
+				<li>
+					<a href="browser-and-proxy-caches.html" target="_self">Browser Cache and Proxy Cache</a>
+				</li>
+				<li>
+					<a class="nav__link--active" href="forward-and-reverse-caching.html" target="_self">Forward and Reverse Caching</a>
+				</li>
+				<li>
+					<a href="cache-control.html" target="_self">Cache Control</a>
+				</li>
+				<li>
+					<a href="cache-clusters.html" target="_self">Cache Clusters</a>
+				</li>
+				<li>
+					<a href="assesment.html" target="_self">Quiz</a>
+				</li>
+			</ul>
+		</nav>
+
+		<main class="info-area">
+			<article>
+				<h2 class="article__heading">Forward and Reverse Caching</h2>
+					<p>
+                    Instead of classifying caches into <a href="browser-and-proxy-caches.html">browser and proxy caches</a> you can also
+					classify as a
+					<strong>forward cache</strong> or a <strong>reverse cache</strong>. These classifications are dependent on 
+                    the location of the cache. A <strong>forward cache</strong> is a cache which is located outside the 
+					network of a webserver. These are located in the local 
+                    network of the visitor, the network of an institute/company or the network of an ISP. Examples of this are 
+					the internal memory of the 
+                    host or an institutional proxy cache. Forward caches are physically located closer to the 
+					host than reverse caches, which means the
+                    propagation delay will be smaller when requesting something from the forward cache. This means that less 
+					routers will have 
+					to be traversed and the queuing delay will be smaller. The other type of 
+                    cache that can be classified is the reverse cache. This cache is present in the CDN (Content Delivery Network) and 
+					it can also be called a 
+                    <strong>gateway proxy</strong>. 
+                    <sup>
+                        <a href="http://www2009.eprints.org/30/1/p291.pdf" 
+                        target="_blank">[1]</a>
+                    </sup>
+					</p>
+                    <figure>
+						<img class="figure__image" src="images/forwardcache.jpg" alt="This image shows the process of forward proxying. The forward cache is located
+                        closer to the visitor.">
+						<figcaption class="caption">Fig. 1. Forward caching</figcaption>
+					</figure>	
+                    <figure>
+						<img class="figure__image" src="images/reversecache.jpg" alt="This image shows the process of reverse proxying. The reverse cache is located
+                        closer to the CDN.">
+						<figcaption class="caption">Fig. 2. Reverse caching</figcaption>
+					</figure>	
+			</article>
+		</main>
+		
+        <footer class="info-area">
+			<article>
+				<h2 class="article__heading">References</h2>
+					<p>
+						1.
+						<a class="footer__link" href="http://www2009.eprints.org/30/1/p291.pdf" target="_blank">
+							Erman, J., Gerber, A., Hajiaghayi, M. T., Pei, D., & Spatscheck, O. (2009, April). Network-aware forward caching. In Proceedings of the 18th international conference on World wide web (pp. 291-300).</a>
+					</p>
+			</article>
+		</footer>
+	</body>
+</html>
+
+			
+			

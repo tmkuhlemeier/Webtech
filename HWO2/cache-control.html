@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+		<meta name="description" content="What is cache control? When, where, and for how long a web item is cached depends on so 
+        called cache-control headers. These are HTTP-headers which are being added by a request of the client or by a response of a server.">
+		<meta name="keywords" content="webcaches, web caches, cache-clusters, cache control, HTTP, cache header, cache-control headers,
+        request directives, response directives, stale, cache policy, origin server, fetch, browser, cache, HTTP headers">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="css/stylesheet.css">
+        <script src="js/menu.js" defer></script>
+		<title>Cache Control</title>
+    </head>
+    
+    <body>
+        <header class="info-area">
+			<h1>Introduction to Webcaches</h1>
+			<h2>The website to find information about webcaches</h2>
+		</header>
+        <nav>
+            <ul class="nav__list">
+                <li>
+                    <a href="index.html" target="_self"> Introduction to Webcaches</a>
+                </li>
+                <li>
+                    <a href="browser-and-proxy-caches.html" target="_self">Browser Cache and Proxy Cache</a>
+                </li>
+                <li>
+                    <a href="forward-and-reverse-caching.html" target="_self">Forward and Reverse Caching</a>
+                </li>
+                <li>
+                    <a class="nav__link--active" href="cache-control.html" target="_self">Cache Control</a>
+                </li>
+                <li>
+                    <a href="cache-clusters.html" target="_self">Cache Clusters</a>
+                </li>
+                <li>
+                    <a href="assesment.html" target="_self">Quiz</a>
+                </li>
+            </ul>
+		</nav>
+        <main class="info-area">      
+            <article>
+				<h2 class="article__heading">Cache Control</h2>
+                    <p>
+                        As mentioned earlier, browsers and servers have <strong>caching policies</strong>.
+                        When, where, and for how long a web item is cached depends on so called
+                        <strong>cache-control headers</strong>. These are <strong>HTTP-headers</strong> which are being added
+                        by a request of the client or by a response of a server. These headers are also called
+                        <strong>cache directives</strong>.
+                        <sup>
+                            <a href="https://www.imperva.com/learn/performance/cache-control/" target="_blank">[1]</a>
+                        </sup>
+                    </p>
+                        <table>
+                            <caption class="caption">Table 1. Some examples of these cache request and response directives.
+                                <sup>
+                                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control" target="_blank">[2]</a>
+                                </sup>
+                            </caption>
+                            <thead>
+                                <tr>
+                                    <th>Request directives</th>
+                                    <th>Response directives</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        max-age= &lt;seconds>:<br>
+                                        Keeps track of the time during which an item is "fresh".
+                                    </td>
+                                    <td>
+                                        must-revalidate:<br> 
+                                        When a response is stale, the cache is not allowed to use the copy before
+                                        it has been revalidated by the server.
+                                    </td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>
+                                            max-stale[=&lt;seconds>]:<br>
+                                            Indicates that the client accepts a stale response.
+                                            Has an option to 
+                                            change the maximum time a response is
+                                            stale.
+                                    </td>
+                                    <td>
+                                        public:<br>
+                                        The response can be cached anywhere.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        no-store:<br>
+                                        Prevents a response being cached by whichever cache.
+                                        Useful for e.g. sensitive information
+                                        like bank account numbers.
+                                    </td>
+                                    <td>
+                                        private:<br>
+                                        The response can only be cached by the client.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        no-cache:<br>
+                                        A cached response must always be validated at the
+                                        origin server.
+                                    </td>
+                                    <td>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        only-if-cached:<br>
+                                        The client requests a response from only
+                                        a cache, without accessing the origin server.                        
+                                    </td>
+                                    <td>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+					<p>
+                        The foregoing shows that the <strong>cache policy</strong> of a browser or server also
+                        influences how fast a web item is loaded in a
+                        browser. For example, if an item has a no-store cache-control header,
+                        it must always be retrieved from the origin server. On the other hand if, for
+                        example, the
+                        client accepts a “stale” item, then it can simply be fetched from a cache if it
+                        exists there.
+					</p>
+            </article>
+        </main>
+        <footer class="info-area">
+            <article>  
+                <h2 class="article__heading">References</h2>
+			        <p>
+				        1.
+				        <a class="footer__link" href="https://www.imperva.com/learn/performance/cache-control/" target="_blank">
+                            imperva.com, cache-control</a>
+			        <p>
+				        2.
+				        <a class="footer__link" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control" target="_blank">
+                            developer.mozilla.org, cache-control</a>
+			        </p>
+            </article>
+        </footer>
+    </body>
+</html>

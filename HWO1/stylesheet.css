@@ -1,0 +1,190 @@
+﻿/*basis voor text*/
+html{
+	font-family:Arial;
+	font-size:20px;
+}
+
+/*color gradient voor achtergrond*/
+body{
+	background-color: steelblue
+}
+/*kadert main, header en de footer en haalt linear-gradient weg*/
+.info-area{
+	background-color: white;
+	margin: 2vh 0px;
+	border: 1px solid black;
+}
+
+h1,h2{
+	text-align: center;
+}
+
+table {
+	margin-left:auto;
+	margin-right:auto;
+	width:90vw;
+}
+
+th, td {
+	text-align: left;
+	padding: 10px;
+	font-size: 0.8rem;
+}
+
+td{
+	width: 50%;
+}
+
+tr:nth-child(even) {
+	background-color: lightsteelblue;
+}
+
+tr:nth-child(odd){
+	background-color: white;
+}
+
+th {
+	background-color: steelblue;
+}
+
+table, th, td{
+	border: 1px solid #000;
+	border-collapse: collapse;
+	vertical-align: top;
+}
+
+a{
+	color:blue;
+	text-decoration:none;
+}
+
+/*opmaak voor een footer link*/
+a.footer__link{
+	font-family: "Lucida Console";
+	font-size:0.9rem;
+	color:black;
+	text-decoration:underline;
+}
+
+/*centreert een afbeelding*/
+img.figure__image{
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+	width:70vw;
+	height:auto;
+}
+/*centreert een alinea*/
+p{
+	margin-left:auto;
+	margin-right:auto;
+	width:70vw;
+}
+/*centreert een heading*/
+h1.section__heading{
+	text-align:left;
+	font-size:1.3rem;
+	width: 70vw;
+	margin-left:auto;
+	margin-right:auto;
+
+}
+
+/*figcaption text opmaak*/
+.caption{
+	font-family:Italic;
+	text-align:center;
+	font-size:0.8rem;
+}
+
+/*nodig voor navigation menu*/
+ul.nav__list{
+	border: 1px solid black;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	background-color:white;
+	margin-left: auto;
+	margin-right: auto;
+
+}
+
+/*nodig voor navigation menu*(ul.nav__list a betekent voor alle links in ul.nav__list)*/
+ul.nav__list a{
+	display: block;
+	font-size:1.3rem;
+	color:black;
+	font-family:Verdana;
+	text-decoration:none;
+	border: 1px solid black;
+	text-align: center;
+}
+
+/*wanneer een link in de nav bar actief is wordt dat aangegeven*/
+a.nav__link--active{
+	background-color: lightsteelblue;
+}
+
+/*aanpassingen voor landscape mode*/
+@media only screen and (orientation: landscape){
+	#cachehierarchyimg{
+		height:90vh;
+	}
+}
+
+/*aanpassingen voor desktop*/
+@media only screen and (min-width:1200px){
+	
+	html{
+		font-size:16px;
+	}
+
+	p{
+		font-size: 1.2rem;
+	}
+	
+	ul.nav__list a:hover{
+		background-color:steelblue;
+		color:white;
+	}
+	
+	a:hover{
+	color: red;
+	}
+	
+	img.figure__image{
+		width:30vw;
+	}
+
+	h1.section__heading{
+		font-size:1.7rem;
+	}
+
+	ul.nav__list a{
+		font-size:1.5rem;
+	}
+
+	.caption{
+		font-size:1rem;
+	}
+
+	table {
+	width: 70vw;
+	}
+
+	th, td {
+		font-size: 1rem;
+	}
+
+	#cachehierarchyimg{
+		height:50vh;
+	}
+
+}
+
+
+
+
+
+
+

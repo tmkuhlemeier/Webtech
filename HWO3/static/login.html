@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="Login for access to the quizzes and assesment of your knowledge about web caches">
+        <meta name="keywords" content="Login, login, assesment, quiz, user, registered user, webcaches, web-cache, web-caches">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/stylesheet.css">
+        <script src="js/menu.js" defer></script>
+        <script src="js/user.js" defer></script>
+        <title>Login</title>
+    </head>
+
+    <body>
+        <header class="info-area">
+            <a href="login.html" target="_self" id="login-link">Login</a>
+            <a href="register.html" target="_self" id="register-link">Register</a>
+            <h1>Introduction to Webcaches</h1>
+            <h2>The website to find information about webcaches</h2>
+        </header>
+        <nav>
+            <ul class="nav__list">
+                <li>
+                    <a href="index.html" target="_self"> Introduction to Webcaches</a>
+                </li>
+                <li>
+                    <a href="browser-and-proxy-caches.html" target="_self">Browser Cache and Proxy Cache</a>
+                </li>
+                <li>
+                    <a href="forward-and-reverse-caching.html" target="_self">Forward and Reverse Caching</a>
+                </li>
+                <li>
+                    <a href="cache-control.html" target="_self">Cache Control</a>
+                </li>
+                <li>
+                    <a href="cache-clusters.html" target="_self">Cache Clusters</a>
+                </li>
+                <li>
+                    <a href="assesment.html" target="_self">Quiz</a>
+                </li>
+            </ul>
+        </nav>
+        <main class="info-area">
+            <article>
+                <h2>Login</h2>
+                <form class="form">
+                    <label for="username" class="form__label">User name</label>
+                    <input type="text" name="username" class="textbox" required/>
+                    <label for="password" class="form__label">Password</label>
+                    <input type="password" name="password" class="textbox" required/>
+                    <input type="submit" value="login" class="form__submit"/>
+                </form>
+                <p id="link-to-register">
+                    <a href="register.html" target="_self" id="link-to-register">I don't have an account yet</a>
+                </p>
+            </article>
+
+        </main>
+    </body>
+</html>
